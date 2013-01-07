@@ -20,7 +20,7 @@
 }
 #piano {position: relative; left: 0px;}
 #left,#right {
-	/*font-family: 'iconicstroke'; */position: absolute; top: 280px; font-size: 28px; cursor: pointer; color: #eee; z-index: 99999;
+	/*font-family: 'iconicstroke';*/ position: absolute; top: 280px; font-size: 28px; cursor: pointer; color: #eee; z-index: 99999;
 	text-shadow: 0 1px 0 #ccc;
 }
 #left {left: 40px;}
