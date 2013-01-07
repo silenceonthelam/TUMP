@@ -1,0 +1,47 @@
+*{padding:0;margin:0;text-decoration:none;list-style:none;box-sizing:border-box;}
+body {font: 13px/20px helvetica; color: #333;}
+.wrapper {width: 98%; margin: 20px auto;}
+h1 {font: 48px/60px 'helvetica'; margin-right: -20px;}
+hgroup h1, hgroup p {display: inline-block;}
+section {background: -webkit-linear-gradient(#393939, #191919 100px, #202020 110px, #191919 110px, #090909); border-radius: 4px;}
+#controls {
+	height: 110px; border-radius: 2px; font: 16px/40px 'Josefin Sans Std'; z-index: 999;
+	color: #ccc; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 -1px 0 rgba(255,255,255,.1); border-top: 1px solid #222; position: relative;
+}
+#controls {
+	margin-top: 20px; padding: 20px;
+}
+.control {
+	display: inline-block; vertical-align: top; margin-right: 60px;
+}
+input[type="radio"] {
+	-webkit-appearance: none; width: 14px; height: 14px; border-radius: 50%; margin-right: 2px; position: relative;
+	background: -webkit-linear-gradient(#111,#292929); border: 2px solid #111; box-shadow: 0 0 3px 1px #444;
+}
+input[type="radio"]:focus,input[type="radio"]:checked {
+	background: -webkit-radial-gradient(rgba(204,204,204,.6) 20%,rgba(204,204,204,0));
+	box-shadow: inset 0 0 2px 1px rgba(0,0,0,1); outline: none;
+	border: 2px outset #ff5e99; border-radius: 50%;
+}
+#controls label {
+	margin-right: 8px; font-size: 13px; line-height: 20px;
+}
+#controls p {
+	font-size: 16px; line-height: 20px;
+}
+#vol input[type='range'],#det input[type='range'] {
+    -webkit-appearance: none; width: 120px; height: 12px; border-radius: 15px; border: 1px solid #444;
+	background: -webkit-linear-gradient(#000,#222);
+}
+#vol input[type='range']::-webkit-slider-thumb,#det input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%;
+	background: -webkit-linear-gradient(#fff 1px, rgba(255,255,255,.8) 3px,rgba(255,255,255,0) 12px),
+				-webkit-radial-gradient(#ff5e99 20%,#f33);
+}
+#temperaments {width: 300px; line-height: 20px;}
+#temperaments p {margin-bottom: 10px;}
+#temperaments li {display: inline-block;}
+#temperaments input {}
+#info {
+	margin-top: 80px;
+}

@@ -1,5 +1,371 @@
-<h1>TUMP</h1>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>TUMP</title>
+<link rel="stylesheet" href="keys.css" />
+<link rel="stylesheet" href="main.css" />
+</head>
+<body>
 
-<p>a webaudio experiment</p>
+<div class="wrapper">
+	<heading>
+		<hgroup><h1>TUMP</h1><p>v.0.2a</p></hgroup>
+	</heading>
 
-<p>and a backronym in the making</p>
+	<section>
+		<div id="controls">
+			<div id="osc" class="control">
+				<p>Oscillator Type</p>
+				<input type="radio" name="oscType" id="sine" value="0" checked /> <label for="sine">Sine</label>
+				<input type="radio" name="oscType" id="square" value="1" /> <label for="square">Square</label>
+				<input type="radio" name="oscType" id="saw" value="2" /> <label for="saw">Saw</label>
+				<input type="radio" name="oscType" id="triangle" value="3" /> <label for="triangle">Triangle</label>
+			</div>
+			<div id="vol" class="control">
+				<p>Volume</p>
+				<input id="volume" type="range" min="0" max="1" step="0.01" value=".5"/>
+			</div>
+			<div id="det" class="control">
+				<p>Detune</p>
+				<input id="detune" type="range" min="-50" max="50" step="1" value="0"/>
+				 <!--<input type="checkbox" name="random" id="random" value="random" /> <label for="random">Random</label>-->
+			</div>
+			<div id="temperaments" class="control">
+				<p>Temperaments</p>
+				<ul>
+					<li><input type="radio" name="tuning" id="equal" value="0" checked /> <label for="equal">Equal</label></li>
+					<li><input type="radio" name="tuning" id="pythagorean" value="1" /> <label for="pythagorean">Pythagorean</label></li>
+					<li><input type="radio" name="tuning" id="just" value="2" /> <label for="just">Just</label></li>
+					<li><input type="radio" name="tuning" id="meanTone" value="3" /> <label for="meanTone">Mean-Tone</label></li>
+				</ul>
+	
+			</div>
+		</div>
+		
+		<div id="left">6</div>
+		<div id="pianoContainer">
+		<div id="piano">
+			<div data-pitchClass="a" data-octave="0" class="key"></div>
+				<div data-pitchClass="bb" data-octave="0" class="key black"></div>
+			<div data-pitchClass="b" data-octave="0" class="key"></div>
+			<div data-pitchClass="c" data-octave="1" class="key"></div>
+					<div data-pitchClass="db" data-octave="1" class="key black"></div>
+			<div data-pitchClass="d" data-octave="1" class="key"></div>
+				<div data-pitchClass="eb" data-octave="1" class="key black"></div>
+			<div data-pitchClass="e" data-octave="1" class="key"></div>
+			<div data-pitchClass="f" data-octave="1" class="key"></div>
+				<div data-pitchClass="gb" data-octave="1" class="key black"></div>
+			<div data-pitchClass="g" data-octave="1" class="key"></div>
+				<div data-pitchClass="ab" data-octave="1" class="key black"></div>
+
+			<div data-pitchClass="a" data-octave="1" class="key"></div>
+				<div data-pitchClass="bb" data-octave="1" class="key black"></div>
+			<div data-pitchClass="b" data-octave="1" class="key"></div>
+			<div data-pitchClass="c" data-octave="2" class="key"></div>
+				<div data-pitchClass="db" data-octave="2" class="key black"></div>
+			<div data-pitchClass="d" data-octave="2" class="key"></div>
+				<div data-pitchClass="eb" data-octave="2" class="key black"></div>
+			<div data-pitchClass="e" data-octave="2" class="key"></div>
+			<div data-pitchClass="f" data-octave="2" class="key"></div>
+				<div data-pitchClass="gb" data-octave="2" class="key black"></div>
+			<div data-pitchClass="g" data-octave="2" class="key"></div>
+				<div data-pitchClass="ab" data-octave="2" class="key black"></div>
+
+			<div data-pitchClass="a" data-octave="2" class="key"></div>
+				<div data-pitchClass="bb" data-octave="2" class="key black"></div>
+			<div data-pitchClass="b" data-octave="2" class="key"></div>
+			<div data-pitchClass="c" data-octave="3" class="key"></div>
+				<div data-pitchClass="db" data-octave="3" class="key black"></div>
+			<div data-pitchClass="d" data-octave="3" class="key"></div>
+				<div data-pitchClass="eb" data-octave="3" class="key black"></div>
+			<div data-pitchClass="e" data-octave="3" class="key"></div>
+			<div data-pitchClass="f" data-octave="3" class="key"></div>
+				<div data-pitchClass="gb" data-octave="3" class="key black"></div>
+			<div data-pitchClass="g" data-octave="3" class="key"></div>
+				<div data-pitchClass="ab" data-octave="3" class="key black"></div>
+
+			<div data-pitchClass="a" data-octave="3" class="key"></div>
+				<div data-pitchClass="bb" data-octave="3" class="key black"></div>
+			<div data-pitchClass="b" data-octave="3" class="key"></div>
+			<div data-pitchClass="c" data-octave="4" class="key"></div>
+				<div data-pitchClass="db" data-octave="4" class="key black"></div>
+			<div data-pitchClass="d" data-octave="4" class="key"></div>
+				<div data-pitchClass="eb" data-octave="4" class="key black"></div>
+			<div data-pitchClass="e" data-octave="4" class="key"></div>
+			<div data-pitchClass="f" data-octave="4" class="key"></div>
+				<div data-pitchClass="gb" data-octave="4" class="key black"></div>
+			<div data-pitchClass="g" data-octave="4" class="key"></div>
+				<div data-pitchClass="ab" data-octave="4" class="key black"></div>
+
+			<div data-pitchClass="a" data-octave="4" class="key"></div>
+				<div data-pitchClass="bb" data-octave="4" class="key black"></div>
+			<div data-pitchClass="b" data-octave="4" class="key"></div>
+			<div data-pitchClass="c" data-octave="5" class="key"></div>
+				<div data-pitchClass="db" data-octave="5" class="key black"></div>
+			<div data-pitchClass="d" data-octave="5" class="key"></div>
+				<div data-pitchClass="eb" data-octave="5" class="key black"></div>
+			<div data-pitchClass="e" data-octave="5" class="key"></div>
+			<div data-pitchClass="f" data-octave="5" class="key"></div>
+				<div data-pitchClass="gb" data-octave="5" class="key black"></div>
+			<div data-pitchClass="g" data-octave="5" class="key"></div>
+				<div data-pitchClass="ab" data-octave="5" class="key black"></div>
+
+			<div data-pitchClass="a" data-octave="5" class="key"></div>
+				<div data-pitchClass="bb" data-octave="5" class="key black"></div>
+			<div data-pitchClass="b" data-octave="5" class="key"></div>
+			<div data-pitchClass="c" data-octave="6" class="key"></div>
+				<div data-pitchClass="db" data-octave="6" class="key black"></div>
+			<div data-pitchClass="d" data-octave="6" class="key"></div>
+				<div data-pitchClass="eb" data-octave="6" class="key black"></div>
+			<div data-pitchClass="e" data-octave="6" class="key"></div>
+			<div data-pitchClass="f" data-octave="6" class="key"></div>
+				<div data-pitchClass="gb" data-octave="6" class="key black"></div>
+			<div data-pitchClass="g" data-octave="6" class="key"></div>
+				<div data-pitchClass="ab" data-octave="6" class="key black"></div>
+
+			<div data-pitchClass="a" data-octave="6" class="key"></div>
+				<div data-pitchClass="bb" data-octave="6" class="key black"></div>
+			<div data-pitchClass="b" data-octave="6" class="key"></div>
+			<div data-pitchClass="c" data-octave="7" class="key"></div>
+				<div data-pitchClass="db" data-octave="7" class="key black"></div>
+			<div data-pitchClass="d" data-octave="7" class="key"></div>
+				<div data-pitchClass="eb" data-octave="7" class="key black"></div>
+			<div data-pitchClass="e" data-octave="7" class="key"></div>
+			<div data-pitchClass="f" data-octave="7" class="key"></div>
+				<div data-pitchClass="gb" data-octave="7" class="key black"></div>
+			<div data-pitchClass="g" data-octave="7" class="key"></div>
+				<div data-pitchClass="ab" data-octave="7" class="key black"></div>
+
+			<div data-pitchClass="a" data-octave="7" class="key"></div>
+				<div data-pitchClass="bb" data-octave="7" class="key black"></div>
+			<div data-pitchClass="b" data-octave="7" class="key"></div>
+			<div data-pitchClass="c" data-octave="8" class="key"></div>
+				<div data-pitchClass="db" data-octave="8" class="key black"></div>
+			<div data-pitchClass="d" data-octave="8" class="key"></div>
+				<div data-pitchClass="eb" data-octave="8" class="key black"></div>
+			<div data-pitchClass="e" data-octave="8" class="key"></div>
+			<div data-pitchClass="f" data-octave="8" class="key"></div>
+				<div data-pitchClass="gb" data-octave="8" class="key black"></div>
+			<div data-pitchClass="g" data-octave="8" class="key"></div>
+				<div data-pitchClass="ab" data-octave="8" class="key black"></div>
+
+			<div data-pitchClass="a" data-octave="8" class="key"></div>
+				<div data-pitchClass="bb" data-octave="8" class="key black"></div>
+			<div data-pitchClass="b" data-octave="8" class="key"></div>
+			<div data-pitchClass="c" data-octave="9" class="key"></div>
+		</div>
+		</div>
+		<div id="right">4</div>
+	</section>	
+	
+	<!-- <div id="info">		
+		<div class="equal">
+			<h3>Equal Temperament</h3>
+			<p>
+				Equal temperament is the temperament most 
+				widely used today.
+			</p>
+		</div>
+		<div class="py">
+			<h3>Pythagorean Intonation</h3>
+			<p>
+				
+			</p>
+		</div>
+		<div class="just">
+			<h3>Just Intonation</h3>
+			<p>
+				
+			</p>
+		</div>
+		<div class="meanTone">
+			<h3>Mean-Tone Temperament</h3>
+			<p>
+				You may have noticed that some of these tunings
+				are called 'intonations', while others are called
+				'temperaments'.  While many people use these terms
+				interchangeably, there is a slight difference.
+			</p>
+		</div>
+	</div> -->
+	
+</div>	
+<script src="/libs/jquery.1.7.2.js"></script>
+<script src="slider.js"></script>
+<script type="text/javascript">
+var ctx = new webkitAudioContext(),
+	osc,
+	gainNode,
+	compressor,
+	freq;
+
+/* Start */
+function NoteOn(e) {
+	var that = $(this);
+	osc = ctx.createOscillator();
+	osc.detune.value = getDetuneAmt();
+	osc.type = getOscType();
+	var temperament = getTemperament();
+	if (temperament == 0) {
+		calcET(that);
+	} else {
+		calcOther(that,temperament);
+	}
+	osc.frequency.value = freq;
+	gainNode = ctx.createGainNode();
+
+	gainNode.gain.value = 0.0;
+	var loudness = getVolume();
+
+	osc.connect(gainNode);
+
+	compressor = ctx.createDynamicsCompressor();
+	gainNode.connect(compressor);
+	compressor.connect(ctx.destination);
+	osc.noteOn(0);
+	console.log(freq);
+
+	var now = ctx.currentTime;
+	gainNode.gain.cancelScheduledValues(now);
+	gainNode.gain.setValueAtTime(gainNode.gain.value, now);
+	gainNode.gain.linearRampToValueAtTime(loudness, now + .001);
+}
+/* stop */
+function NoteOff() {
+	//osc.noteOff(0);
+	var now = ctx.currentTime;
+	gainNode.gain.cancelScheduledValues(now);
+	gainNode.gain.setTargetValueAtTime(0.0, now + .35, .15);
+}
+
+/* get param values */
+function getVolume() {
+	return $('#vol').find('input').val();
+}
+function getDetuneAmt() {
+	return $('#det').find('input').val();
+}
+function getTemperament() {
+	return $('#temperaments input:checked').val();
+}
+function getOscType() {
+	return $('#osc input:checked').val();
+}
+
+/* temperament calculations */
+function calcET(that) {
+	var curKey = that.index()+1;
+	var ref = 440;
+	var refKey = 49;
+	freq = ref * (Math.pow(Math.pow(2,1/12), (curKey - refKey )));
+	return freq;
+}
+function calcOther(that,temperament) {
+	var that = $(that);
+	var octMult = 1;
+	var pitch = that.attr('data-pitchClass');
+	var oct = that.attr('data-octave');
+	ref = 440;
+	refKey = 49;
+	curKey = that.index()+1;
+	//console.log("Cur " + curKey);
+	var keyDiff = curKey - refKey;
+	//console.log("Key " + keyDiff);
+	var pitchNum = keyDiff % 12;
+	//console.log("pn " + pitchNum);
+	//refPitch = 'a'; //for future variants on the tuning
+	refOct = 4;
+	if (pitchNum < 0) {pitchNum = 12 - Math.abs(pitchNum);}
+	var tuningRatio = [];
+	var refPitch = [];
+	var baseReference = 440;
+	freq;
+	if (temperament == 1) { //pythagorean
+		calcPy(tuningRatio);
+	} else if (temperament == 2) { //just
+		calcJust(tuningRatio);
+	} else if (temperament == 3) { //meanTone
+		calcMT(tuningRatio);
+	}
+	console.log('trpn',tuningRatio[pitchNum]);
+	if (pitchNum > 2) {
+		oct = oct - 1;
+	}
+	if (oct > refOct ) {
+		octMult = oct - refOct + 1;
+		freq = baseReference * tuningRatio[pitchNum] * Math.pow(2,(octMult-1));
+	} else if (oct < refOct) {
+		octMult = refOct - oct + 1;
+		freq = baseReference * tuningRatio[pitchNum] * Math.pow(2,-(octMult-1));
+	} else {
+		freq = baseReference * tuningRatio[pitchNum];
+	}
+	return freq;
+}
+function calcPy(tuningRatio) {
+	tuningRatio[0] = 1;
+	tuningRatio[1] = 256/243;
+	tuningRatio[2] = 9/8;
+	tuningRatio[3] = 32/27;
+	tuningRatio[4] = 81/64;
+	tuningRatio[5] = 4/3;
+	tuningRatio[6] = 729/512;
+	tuningRatio[7] = 3/2;
+	tuningRatio[8] = 128/81;
+	tuningRatio[9] = 27/16;
+	tuningRatio[10] = 16/9;
+	tuningRatio[11] = 243/128;
+	return tuningRatio;
+}
+function calcJust(tuningRatio) {
+	tuningRatio[0] = 1;
+	tuningRatio[1] = 16/15;
+	tuningRatio[2] = 9/8;
+	tuningRatio[3] = 6/5;
+	tuningRatio[4] = 5/4;
+	tuningRatio[5] = 4/3;
+	tuningRatio[6] = 45/32;
+	tuningRatio[7] = 3/2;
+	tuningRatio[8] = 8/5;
+	tuningRatio[9] = 5/3;
+	tuningRatio[10] = 9/5;
+	tuningRatio[11] = 15/8;
+	return tuningRatio;
+}
+function calcMT(tuningRatio) {
+	tuningRatio[0] = 1;
+	tuningRatio[1] = 1.0700;
+	tuningRatio[2] = 1.1180;
+	tuningRatio[3] = 1.1963;
+	tuningRatio[4] = 1.2500;
+	tuningRatio[5] = 1.3375;
+	tuningRatio[6] = 1.3975;
+	tuningRatio[7] = 1.4953;
+	tuningRatio[8] = 1.6000;
+	tuningRatio[9] = 1.6719;
+	tuningRatio[10] = 1.7889;
+	tuningRatio[11] = 1.8692;
+	return tuningRatio;
+}
+
+/*
+$('#vol').on('change', function() {
+	console.log(getVolume());
+});
+$('#det').on('change', function() {
+	console.log(getDetuneAmt());
+});
+$('#temperaments input').on('change', function() {
+	console.log(getTemperament());
+});
+$('#osc input').on('change', function() {
+	console.log(getOscType());
+});*/
+
+$('.key').on('mousedown', NoteOn);
+$('.key').on('mouseup', NoteOff);
+
+</script>
+</body>
+</html>

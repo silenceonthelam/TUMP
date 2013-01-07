@@ -1,0 +1,27 @@
+#pianoContainer {
+	width: 90%; margin: auto; border-top: 1px solid #aaa; border-radius: 2px; overflow: hidden; margin-top: -1px; 
+}
+#piano {width: 2500px;}
+.key {
+	width: 1.645%; height: 180px; 
+	background: -webkit-radial-gradient(50% 35%, 90% 150%, rgba(255,255,255,.8) 20%,rgba(153,153,153,0)), -webkit-linear-gradient(#eee 50%,#ddd 177px,#ccc); 
+	border: 1px solid #d3d3d3; display: inline-block;
+	margin-left: -3px; -webkit-transition: 2s; border-radius: 0 0 2px 2px; 
+	box-shadow: inset 0 -1px 1px rgba(0,0,0,.3);
+}
+.key:active, .key.black:active {
+	background: -webkit-radial-gradient(50% 35%, 50% 100%, rgba(255,255,255,.35) 20%,rgba(102,102,102,0)), 
+				-webkit-linear-gradient(#bada55 50%, #ac6); 
+	-webkit-transition: .3s;
+}
+.key.black {
+	background: -webkit-linear-gradient(#222,#111 110px,#333); width: 32px; margin-left: -16px; border-radius: 0 0 6px 6px; height: 120px;
+	position: relative; top: -60px; margin-right: -20px;
+}
+#piano {position: relative; left: 0px;}
+#left,#right {
+	font-family: 'iconicstroke'; position: absolute; top: 280px; font-size: 28px; cursor: pointer; color: #eee; z-index: 99999;
+	text-shadow: 0 1px 0 #ccc;
+}
+#left {left: 40px;}
+#right {right: 40px;}
