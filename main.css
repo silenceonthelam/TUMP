@@ -45,7 +45,7 @@ input[type="radio"]:focus,input[type="radio"]:checked {
 #info {
 	margin-top: 80px; margin-left: 200px
 }
-#info h2 {font: italic lighter 36px/40px 'georgia'; margin-bottom: 10px;}
-#info p {font: 16px/24px 'georgia'; margin-bottom: 16px; width: 34em;}
+#info h2 {font: italic lighter 36px/40px 'georgia'; margin-bottom: 20px;}
+#info p {font: 16px/24px 'georgia'; margin-bottom: 10px; width: 34em;}
 #info dt {font: italic lighter 24px/30px 'georgia'; margin-bottom: 10px;}
 #info dd {font: 16px/24px 'georgia'; margin-bottom: 16px; width: 34em;}
