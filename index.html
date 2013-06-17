@@ -266,7 +266,7 @@ function NoteOn(e) {
 	compressor = ctx.createDynamicsCompressor();
 	gainNode.connect(compressor);
 	compressor.connect(ctx.destination);
-	osc.noteOn(0);
+	osc.Start(0);
 	console.log(freq);
 
 	var now = ctx.currentTime;
