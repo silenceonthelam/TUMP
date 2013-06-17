@@ -294,7 +294,13 @@ function getTemperament() {
 }
 function getOscType() {
 	console.log($('#osc input:checked').val());
-	return $('#osc input:checked').val();
+	
+	return switch ($('#osc input:checked').val()) {
+		case 0: 'sine',
+		case 1: 'square',
+		case 2: 'saw',
+		case 3: 'triangle'
+	};
 }
 
 /* temperament calculations */
