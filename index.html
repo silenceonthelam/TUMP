@@ -295,14 +295,14 @@ function getTemperament() {
 function getOscType() {
 	console.log($('#osc input:checked').val());
 	
-	return switch ($('#osc input:checked').val()) {
-		case 0: 'sine';
+	switch ($('#osc input:checked').val()) {
+		case 0: return 'sine';
 			break;
-		case 1: 'square';
+		case 1: return 'square';
 			break;
-		case 2: 'sawtooth';
+		case 2: return 'sawtooth';
 			break;
-		case 3: 'triangle';
+		case 3: return 'triangle';
 	};
 }
 
