@@ -296,10 +296,13 @@ function getOscType() {
 	console.log($('#osc input:checked').val());
 	
 	return switch ($('#osc input:checked').val()) {
-		case 0: 'sine',
-		case 1: 'square',
-		case 2: 'sawtooth',
-		case 3: 'triangle'
+		case 0: 'sine';
+			break;
+		case 1: 'square';
+			break;
+		case 2: 'sawtooth';
+			break;
+		case 3: 'triangle';
 	};
 }
 
