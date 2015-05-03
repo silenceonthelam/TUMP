@@ -1,4 +1,4 @@
-
+//scroll the piano keys up and down for access to different octaves
 var Slider = {
 	init: function() {
 		this.cacheEls();
